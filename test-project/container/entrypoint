@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# COPIED FROM LUNCHBOX
+# TODO: Figure out how to symlink this "binary" from .lunch to this build context dir instead of copying the file to this dir manually
+# TODO: The entrypoint is the handler that receives and executes given operations inside of the container. It needs to be copied into the container. Copying the entrypoint into the container as a step of the build process worked in the prototype because the project root was specified as the docker build context. This isn't an ideal setup, becuase the entire build context dir is sent/copied to the docker agent so that all files in that dir can be used during the container's image build process. Instead, I want to opt for keeping container-related files inside of the container dir and specifying the build context to that folder only.
+
+# Load Env Vars (container: /env/*)
+# TODO: Dynamically load env vars instead of manually specifying them here.
+#       Optionally, specify an argument list to select which ones to load
+#       instead of loading all of them
+#PATH=$(cat /env/path)
+#yarn=$(cat /env/yarn)
+
+CONTAINER_COMMAND="$@"
+echo "Received Command: $CONTAINER_COMMAND"
+eval "$CONTAINER_COMMAND"

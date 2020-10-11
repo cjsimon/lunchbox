@@ -21,4 +21,3 @@ Date: Tue, 11 Apr 2017 15:36:49 GMT
 Server: SimpleHTTP/0.6 Python/3.5.2
 Hello world
 '''
-

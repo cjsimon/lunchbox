@@ -5,3 +5,8 @@ name = "pypi"
 
 [packages]
 http = "*"
+httpserver = "*"
+
+[requires]
+python_version = "3.7"
+

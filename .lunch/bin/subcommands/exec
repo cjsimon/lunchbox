@@ -1,0 +1,12 @@
+#!/bin/bash
+# Run the command in the root porject dir
+cd $(dirname $0) # Move to the script dir
+cd ../../../     # Move to the root project dir
+
+echo $PWD
+
+CONTAINER_NAME=pipenv_test #"$1" # TODO: Refactor
+CONTAINER_COMMAND="$@"
+
+echo "Sending Command: $CONTAINER_COMMAND"
+docker exec -it $CONTAINER_NAME bash -c "/.lunch/entrypoint \"$CONTAINER_COMMAND\""

@@ -1,0 +1,5 @@
+# Container Build Tool
+.lunch
+
+# Project Specific Ignores
+node_module

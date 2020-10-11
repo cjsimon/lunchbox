@@ -1,0 +1,4 @@
+#!/bin/bash
+CONTAINER_NAME=pipenv_test #"$1" # TODO: Refactor
+
+docker stop $CONTAINER_NAME

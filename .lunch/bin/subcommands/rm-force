@@ -1,0 +1,4 @@
+#!/bin/bash
+# TODO: Work this subcommand into the rm subcommand as a -f / --force flag
+CONTAINER_NAME=pipenv_test #"$1" # TODO: Refactor
+docker rm -f $CONTAINER_NAME

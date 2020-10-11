@@ -1,4 +1,0 @@
-#!/bin/bash
-CONTAINER_NAME="$1"
-docker run -t -d --name "$CONTAINER_NAME" pipenv_test /bin/bash
-

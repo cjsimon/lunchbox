@@ -1,0 +1,2 @@
+#!/bin/bash
+./exec "yarn local && find dist/. ! -name . -prune -exec rm -rf {} + && cp -r public/* dist"

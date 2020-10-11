@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Run the command in the root lunch dir space
+cd "$(dirname "$0")" && pwd >> /dev/null # CD to the lunch root dir
+                                         # TODO: What's the difference
+                                         #       between this and: `cd $(dirname $0)`?
+cd subcommands
+
+SUBCOMMAND="$1"
+ARGS="${@:2}"
+
+# TODO: Better command processing.
+#       Test that the subcommand (built in command) / script (custom subcommand) exists
+[ -x $SUBCOMMAND ] && ./$SUBCOMMAND $ARGS
+#
+#test -x $SUBCOMMAND
+#if [ $? -eq 0 ]; then # && [[ -z "${SUBCOMMAND// }" ]]
+#    echo OK
+#else
+#    echo FAIL
+#fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Run the command in the root porject dir
+cd $(dirname $0) # Move to the script dir
+cd ../../../     # Move to the root project dir
+
+PROJECT_ROOT=$(pwd) # Absolute Project Root for absolute volume mounting on Windows
+CONTAINER_NAME=pipenv_test #"$1" # TODO: Refactor
+SRC_IMAGE=my_pipenv
+COMMAND=/bin/bash
+
+docker run --name $CONTAINER_NAME -t -d $SRC_IMAGE $COMMAND
+
+#
+#docker run --name $CONTAINER_NAME -t -d -v $PROJECT_ROOT/dist:/root/src/dist -v $PROJECT_ROOT/docs:/root/src/docs mq_docs bash
+#

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $(dirname $0)
+cd ../../../
+CONTAINER_NAME=pipenv_test #"$1" # TODO: Refactor
+
+docker start $CONTAINER_NAME

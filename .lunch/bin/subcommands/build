@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Builds an image associated with the project
+
+# Run the command in the root porject dir
+cd $(dirname $0) # Move to the script dir
+cd ../../../     # Move to the root project dir
+
+IMAGE_NAME="my_pipenv"
+CONTAINER_NAME="$1"
+DOCKERFILE_PATH="./test-project/container/Dockerfile"
+BUILD_CONTEXT="."
+
+docker build -t "$IMAGE_NAME" -f $DOCKERFILE_PATH $BUILD_CONTEXT
+
+#
+# docker-compose build
+#

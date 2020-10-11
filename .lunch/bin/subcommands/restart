@@ -1,0 +1,7 @@
+#!/bin/bash
+# Run the command in the root porject dir
+cd $(dirname $0) # Move to the script dir
+cd ../../../     # Move to the root project dir
+
+./stop
+./start
