@@ -1,5 +1,4 @@
 # Lunchbox
-
 Project oriented container runtime manager  
 Currently implemented as a wrapper for docker
 
@@ -21,3 +20,7 @@ curl 0.0.0.0:8000 # 127.0.0.1 - - [14/Apr/2020 03:32:30] "GET / HTTP/1.1" 200 -
 
 5. Remove the container  
 `lunch remove`  
+
+## Development
+### direnv
+This project uses [direnv](https://github.com/direnv/direnv) to bootstrap the `lunch` command. To enable direnv in the project run `direnv allow` in the root dir where the `.envrc` file is located 
